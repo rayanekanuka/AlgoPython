@@ -5,7 +5,7 @@ def swap(list, i, j):
 
 
 def tri_insertion(list):
-    print("\ntri_selection\n", "liste : ", list)
+    print("\ntri_insertion\n", "liste : ", list)
     length = len(list)
     for i in range(1, length):
         temp = list[i]
@@ -14,6 +14,7 @@ def tri_insertion(list):
             swap(list, j, j - 1)
             j = j - 1
         list[j] = temp
+        print("chaque tour de boucle :", list)
     return list
 
 
