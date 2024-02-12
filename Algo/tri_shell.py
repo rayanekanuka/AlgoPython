@@ -19,6 +19,7 @@ def tri_shell(list):
                     list[j] = list[j - e]
                     j = j - e
                 list[j] = temp
+        print("chaque tour de boucle :", list)
     return list
 
 print("résultat : ",tri_shell(list))
