@@ -1,4 +1,4 @@
-list_size = [3, 9, 7, 1, 6, 2, 8, 4]
+list = [3, 9, 7, 1, 6, 2, 8, 4]
 
 def swap(list, i, j):
     list[i], list[j] = list[j], list[i]
@@ -18,4 +18,4 @@ def tri_shell(list):
         e = int(((e - 1) / 3))
     return list
 
-print(tri_shell(list_size))
+print(tri_shell(list))
