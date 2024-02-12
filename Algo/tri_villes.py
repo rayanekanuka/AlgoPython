@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
 import csv
+import haversine
 
 class Ville :
     def __init__(self, nom_commune, codes_postaux, latitude, longitude, dist, distanceFromGrenoble):
@@ -35,18 +36,19 @@ def loadFile():
 
 
 def getDistanceFromGrenoble(ville):
-    # Implement me
-    return 0
+    location1 = (45.184301, 5.719791)
+    location2 = (ville.latitude, ville.longitude)
+    result = haversine(location1, location2)
+    return result
 
 
 def isLess(listVille, i, j):
-    print("implement me")
+    getDistanceFromGrenoble(listVille[i]) < getDistanceFromGrenoble(listVille[j])
     return True
 
 
 def swap(listVille, i, j):
-    print("implement me")
-    return True
+    listVille[i], listVille[j] = listVille[j], listVille[i]
 
 
 def changeLabelFile(text):
@@ -101,7 +103,13 @@ def sort():
 
 
 def insertsort(listVille):
-    print("implement me !")
+    for i in range(1, len(listVille)):
+        temp = listVille[i]
+        j = int(i)
+        while j > 0 and listVille[j - 1].distanceFromGrenoble > temp.distanceFromGrenoble:
+            listVille[j] = listVille[j - 1]
+            j = j - 1
+        listVille[j] = temp
     return listVille
 
 
