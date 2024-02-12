@@ -1,7 +1,8 @@
 from tkinter import *
 from tkinter import filedialog
 import csv
-import haversine
+import time
+from haversine import haversine
 
 class Ville :
     def __init__(self, nom_commune, codes_postaux, latitude, longitude, dist, distanceFromGrenoble):
