@@ -5,12 +5,13 @@ def swap(list, i, j):
 
 
 def tri_insertion(list):
-    print("\ntri_insertion\n",  "liste : ", list)
-    for i in range(1, len(list)):
+    print("\ntri_selection\n", "liste : ", list)
+    length = len(list)
+    for i in range(1, length):
         temp = list[i]
         j = i
         while j > 0 and list[j - 1] > temp:
-            list[j] = list[j - 1]
+            swap(list, j, j - 1)
             j = j - 1
         list[j] = temp
     return list
