@@ -13,6 +13,7 @@ def tri_bulle(list):
             if list[i] > list[i + 1]:
                 swap(list, i, (i + 1))
                 permut = True
+        print("chaque tour de boucle :", list)
     return list
 
 
