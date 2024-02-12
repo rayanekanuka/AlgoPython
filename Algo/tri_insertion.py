@@ -5,7 +5,7 @@ def swap(list, i, j):
 
 
 def tri_insertion(list):
-    print("tri_insertion\n", list)
+    print("\ntri_insertion\n",  "liste : ", list)
     for i in range(1, len(list)):
         temp = list[i]
         j = i
@@ -16,4 +16,4 @@ def tri_insertion(list):
     return list
 
 
-print(tri_insertion(list))
+print("résultat : ",tri_insertion(list))
