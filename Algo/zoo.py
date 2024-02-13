@@ -59,7 +59,7 @@ class Zoo:
         return f"Zoo: animal_list = {self.animal_list}"
 
 
-mon_animal = Animal(200, 2)
+mon_animal = Animal(150, 2)
 print(mon_animal.poids, mon_animal.taille)
 print(mon_animal)
 

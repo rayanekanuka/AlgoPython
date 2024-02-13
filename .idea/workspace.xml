@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c0907c-a69d-4232-afe5-970028d0bcf8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DataGPS/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGPS/algoGPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataGPS/algoGPS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algo/zoo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algo/zoo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <updated>1707480697286</updated>
       <workItem from="1707480705596" duration="7844000" />
       <workItem from="1707725073406" duration="20431000" />
-      <workItem from="1707810680189" duration="9053000" />
+      <workItem from="1707810680189" duration="18126000" />
     </task>
     <servers />
   </component>
@@ -108,7 +107,7 @@
     <SUITE FILE_PATH="coverage/AlgoPython$tri_shell.coverage" NAME="tri_shell Coverage Results" MODIFIED="1707742192755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_selection.coverage" NAME="tri_selection Coverage Results" MODIFIED="1707742334343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$AlgoTri.coverage" NAME="AlgoTri Coverage Results" MODIFIED="1707725092260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo" />
-    <SUITE FILE_PATH="coverage/AlgoPython$algoGPS.coverage" NAME="algoGPS Coverage Results" MODIFIED="1707820937081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataGPS" />
+    <SUITE FILE_PATH="coverage/AlgoPython$algoGPS.coverage" NAME="algoGPS Coverage Results" MODIFIED="1707838376238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataGPS" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_fusion.coverage" NAME="tri_fusion Coverage Results" MODIFIED="1707740992667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_rapide.coverage" NAME="tri_rapide Coverage Results" MODIFIED="1707749736166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_insertion.coverage" NAME="tri_insertion Coverage Results" MODIFIED="1707734197939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo" />
