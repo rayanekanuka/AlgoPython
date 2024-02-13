@@ -30,10 +30,21 @@ positions = [
     {"lat": 45.171244, "lng": 5.689872}
 ]
 
-visited = [False] * len(positions)
-
 print("Voici les points GPS")
 print(positions)
+
+
+# Fonction qui récupère un csv et le transforme en objet python
+def loadFile():
+    positions.clear()
+    with open('DataGPS/70villes.csv') as file:
+        csvreader = csv.reader(file)
+        next(csvreader)  # skip header line
+        for row in csvreader:
+            lat = float(row[0])
+            lon = float(row[1])
+            positions.append([lat, lon])
+    return positions
 
 
 # Fonction pour calculer les distances entre deux points
@@ -44,11 +55,16 @@ def distance(point1, point2):
 
 
 # Fonction pour trier les positions par distance (matrice de distance)
-matrix = [[distance(positions[i], positions[j]) for j in range(len(positions))] for i in range(len(positions))]
+matrix = [[distance(positions[i], positions[j])
+           for j in range(len(positions))]
+          for i in range(len(positions))]
 
+print("-------------------------------------------------------------------------")
 print(matrix)
-print("--------------------------")
+print("-------------------------------------------------------------------------")
 
+
+visited = [False] * len(positions)
 
 # Fonction du chemin le plus court non visité
 def shortest_unvisited(current_town):
@@ -66,7 +82,7 @@ def shortest_unvisited(current_town):
 
 shortest_unvisited(0)
 
-# Index de la plus petite distance à index non visité
+# Index du chemin le plus court pour chaque ville
 current_index = 0
 for i in range(len(matrix)):
     index_town = shortest_unvisited(current_index)
@@ -74,27 +90,32 @@ for i in range(len(matrix)):
     current_index = index_town
 
 
-def loadFile():
-    positions.clear()
-    with open('DataGPS/70villes.csv') as file:
-        csvreader = csv.reader(file)
-        next(csvreader)  # skip header line
-        for row in csvreader:
-            lat = float(row[0])
-            lon = float(row[1])
-            positions.append([lat, lon])
-    return positions
-
 
 # AFFICHAGE
 
-m = folium.Map([45.184644905978466, 5.731326584660483], zoom_start=14)
+m = folium.Map([45.184644905978466, 5.731326584660483], tiles="cartodb positron", zoom_start=14)
 
+# Point de départ le Campus
 folium.Marker(
     location=[45.184599534292026, 5.731326584660483],
     tooltip="Le Campus Numérique",
-    # popup="Le Campus Numérique",
     icon=folium.Icon(color="red", icon=""),
 ).add_to(m)
+
+
+# Ajout des marqueurs sur la map
+for position in positions:
+    folium.Marker(
+        location=[position["lat"], position["lng"]],
+        tooltip=str(position["lat"]) + " " + str(position["lng"]),
+        icon=folium.Icon(color="green", icon="cloud"),
+    ).add_to(m)
+
+
+# Ajout de la polyline pour connecter les points via des paramètres directement dedans
+polyline = folium.PolyLine(
+    locations=[[position["lat"], position["lng"]] for position in positions], color='grey')
+polyline.add_to(m)
+
 
 m.save("index.html")
