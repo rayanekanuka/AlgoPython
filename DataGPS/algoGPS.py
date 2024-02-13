@@ -1,7 +1,7 @@
+import csv
+
 import folium
 import math
-
-m = folium.Map(location=(45.184660, 5.731358))
 
 positions = [
     {"lat": 45.171112, "lng": 5.695952},
@@ -47,7 +47,6 @@ def distance(point1, point2):
 matrix = [[distance(positions[i], positions[j]) for j in range(len(positions))] for i in range(len(positions))]
 
 print(matrix)
-print("Woohoooo MATRIX ON THE WAY")
 print("--------------------------")
 
 
@@ -68,6 +67,34 @@ def shortest_unvisited(current_town):
 shortest_unvisited(0)
 
 # Index de la plus petite distance à index non visité
-for _ in range(len(matrix)):
-    index_town = shortest_unvisited(index_town)
+current_index = 0
+for i in range(len(matrix)):
+    index_town = shortest_unvisited(current_index)
     print("Ceci est l'index du chemin le plus court ", index_town)
+    current_index = index_town
+
+
+def loadFile():
+    positions.clear()
+    with open('DataGPS/70villes.csv') as file:
+        csvreader = csv.reader(file)
+        next(csvreader)  # skip header line
+        for row in csvreader:
+            lat = float(row[0])
+            lon = float(row[1])
+            positions.append([lat, lon])
+    return positions
+
+
+# AFFICHAGE
+
+m = folium.Map([45.184644905978466, 5.731326584660483], zoom_start=14)
+
+folium.Marker(
+    location=[45.184599534292026, 5.731326584660483],
+    tooltip="Le Campus Numérique",
+    # popup="Le Campus Numérique",
+    icon=folium.Icon(color="red", icon=""),
+).add_to(m)
+
+m.save("index.html")
