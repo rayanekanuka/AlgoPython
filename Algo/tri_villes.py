@@ -1,8 +1,9 @@
+import csv
 from tkinter import *
 from tkinter import filedialog
-import csv
-import time
+
 from haversine import haversine
+
 
 class Ville :
     def __init__(self, nom_commune, codes_postaux, latitude, longitude, dist, distanceFromGrenoble):
@@ -42,10 +43,11 @@ def getDistanceFromGrenoble(ville):
     result = haversine(location1, location2)
     return result
 
-
 def isLess(listVille, i, j):
-    getDistanceFromGrenoble(listVille[i]) < getDistanceFromGrenoble(listVille[j])
-    return True
+    if listVille[i].distanceFromGrenoble < listVille[j].distanceFromGrenoble:
+        return True
+    else:
+        return False
 
 
 def swap(listVille, i, j):
@@ -93,7 +95,7 @@ def sort():
     elif typeTriSelection == "Tri par tas":
         listVilleSorted = heapsort(listVilleSorted)
     elif typeTriSelection == "Tri rapide":
-        listVilleSorted = quicksort(listVilleSorted)
+        listVilleSorted = quicksort(listVilleSorted, 0,len(listVilleSorted) - 1)
 
     for ville in range(len(listVilleSorted)):
         listVilleSortedBox.insert(END, listVilleSorted[ville].nom_commune + " - " + str(listVilleSorted[ville].distanceFromGrenoble))
@@ -115,17 +117,45 @@ def insertsort(listVille):
 
 
 def selectionsort(listVille):
-    print("implement me !")
+    length = len(listVille)
+    for i in range(0, length):
+        min = i
+        for j in range(i+1, length):
+            if listVille[j].distanceFromGrenoble < listVille[min].distanceFromGrenoble:
+                min = j
+        swap(listVille, i, min)
     return listVille
 
 
 def bubblesort(listVille):
-    print("implement me !")
+    passage = 0
+    permut = True
+    while permut:
+        permut = False
+        passage += 1
+        for i in range(0, (len(listVille) - passage)):
+            if listVille[i].distanceFromGrenoble > listVille[i + 1].distanceFromGrenoble:
+                swap(listVille, i, (i + 1))
+                permut = True
     return listVille
 
 
 def shellsort(listVille):
-    print("implement me !")
+    length = len(listVille)
+    espacements = []
+    e = 0
+    while e < length:
+        e = (3 * e + 1)
+        espacements.insert(0,e)
+
+    for e in espacements:
+        for i in range(e, length):
+                temp = listVille[i]
+                j = i
+                while (j > e - 1) and (listVille[j - e].distanceFromgrenoble > temp.distanceFromGrenoble):
+                    listVille[j] = listVille[j - e]
+                    j = j - e
+                listVille[j] = temp
     return listVille
 
 
@@ -139,9 +169,22 @@ def heapsort(listVille):
     return listVille
 
 
-def quicksort(listVille):
-    print("implement me !")
+def quicksort(listVille, first, last):
+    if first < last:
+        pivot = partition(listVille, first, last)
+        quicksort(listVille, first, pivot - 1)
+        quicksort(listVille, pivot + 1, last)
     return listVille
+
+def partition(listVille, first, last):
+    pivot = listVille[last]
+    j = first
+    for i in range(first, last):
+        if listVille[i].distanceFromGrenoble <= pivot.distanceFromGrenoble:
+            swap(listVille, i, j)
+            j += 1
+    swap(listVille, last, j)
+    return j
 
 
 # Creation de la fenêtre
