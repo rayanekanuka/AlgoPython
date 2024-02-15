@@ -137,15 +137,15 @@ for index, position in enumerate(positions):
 
 
 # Ajout de la polyline pour connecter les points
-def chemin(currentpath):
-    polylinepath = [tuple(position) for position in currentpath]
-
-    polyline = folium.PolyLine(
-        locations=polylinepath, color='grey')
-    polyline.add_to(map)
-
-
-chemin(path)
+# def chemin(currentpath):
+#     polylinepath = [tuple(position) for position in currentpath]
+#
+#     polyline = folium.PolyLine(
+#         locations=polylinepath, color='grey')
+#     polyline.add_to(map)
+#
+#
+# chemin(path)
 
 # Ajout des marqueurs sur la map pour le résultat Glouton
 for index, position in enumerate(path_glouton):
