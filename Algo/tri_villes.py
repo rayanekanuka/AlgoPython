@@ -160,7 +160,29 @@ def shellsort(listVille):
 
 
 def mergesort(listVille):
-    print("implement me !")
+    if len(listVille) > 1:
+        half_list = len(listVille) // 2
+        list_begin = listVille[0: half_list]
+        list_end = listVille[half_list: len(listVille)]
+        mergesort(list_begin)
+        mergesort(list_end)
+        i = j = k = 0
+        while i < len(list_begin) and j < len(list_end):
+            if list_begin[i].distanceFromGrenoble < list_end[j].distanceFromGrenoble:
+                listVille[k] = list_begin[i]
+                i += 1
+            else:
+                listVille[k] = list_end[j]
+                j += 1
+            k += 1
+        while i < len(list_begin):
+            listVille[k] = list_begin[i]
+            i += 1
+            k += 1
+        while j < len(list_end):
+            listVille[k] = list_end[j]
+            j += 1
+            k += 1
     return listVille
 
 
