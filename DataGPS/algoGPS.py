@@ -49,17 +49,6 @@ matrix = [[distance(positions[i], positions[j]) for j in range(len(positions))] 
 print("Matrice de distance :", matrix, "\n")
 
 
-# Fonction qui calcule la distance totale parcourue
-# def total_distance(path):
-#     total = 0
-#     for i in range(0, len(path) - 1):
-#         loc1 = (positions[i][0], positions[i][1])
-#         loc2 = (positions[i+1][0], positions[i+1][1])
-#         print(path[i], path[i + 1])
-#         total += distance(path[i], path[i + 1])
-#         total = round(total, 4)
-#     return total
-
 def total_distance(arr):
     total = 0
     for i in range(len(arr)-1):
@@ -103,24 +92,40 @@ nearest_neighbour()
 print("Résultat du plus proche voisin :", path, "\nLa distance est égale à :", total_distance(path), "Km \n")
 
 
-# ALGO 2-OPT____________________________________________________________________________________________________________
-def swap(list):
-    temp = []
-    while list:
-        temp.append(list.pop())
-    return temp
+# ALGO GLOUTON__________________________________________________________________________________________________________
+def algo_glouton(start_point, path):
+    result = []
+    result.insert(0, path.pop(start_point))
+    while len(path) > 0:
+        new_point = path.pop()
+        temp = result[:]  # équivalent à result.copy()
+        result.append(new_point)
+        for j in range(1, len(result)):
+            temp.insert(j, new_point)
+            if total_distance(temp) < total_distance(result):
+                result = temp[:]
+            temp.pop(j)
+    return result
+
+
+path_glouton = algo_glouton(0, path.copy())
+print("Résultat Glouton :", path_glouton)
+total2 = total_distance(path_glouton)
+print("La distance est égale à :", total2, "Km")
+
 
 
 # AFFICHAGE_____________________________________________________________________________________________________________
 
-m = folium.Map([45.166672, 5.71667], tiles="cartodb positron", zoom_start=14)
+map = folium.Map([45.166672, 5.71667], tiles="cartodb positron", zoom_start=14)
 
 # Point de départ le Campus
 folium.Marker(
     location=[45.184599534292026, 5.731326584660483],
     tooltip="Le Campus Numérique",
     icon=folium.Icon(color="red", icon=""),
-).add_to(m)
+).add_to(map)
+
 
 # Ajout des marqueurs sur la map
 for index, position in enumerate(positions):
@@ -128,24 +133,32 @@ for index, position in enumerate(positions):
         location=[position[0], position[1]],
         tooltip=str(index),
         icon=folium.Icon(color="green", icon="cloud"),
-    ).add_to(m)
+    ).add_to(map)
 
 
 # Ajout de la polyline pour connecter les points
-# def chemin(currentpath):
-#     polylinepath = []
-#     for i in currentpath:
-#         coordinate = positions[i]
-#         latitude = coordinate[0]
-#         longitude = coordinate[1]
-#         polylineCoordinate = (latitude, longitude)
-#         polylinepath.append(polylineCoordinate)
-#
-#     polyline = folium.PolyLine(
-#         locations=polylinepath, color='grey')
-#     polyline.add_to(m)
-#
-#
-# chemin(path)
+def chemin(currentpath):
+    polylinepath = [tuple(position) for position in currentpath]
 
-m.save("index.html")
+    polyline = folium.PolyLine(
+        locations=polylinepath, color='grey')
+    polyline.add_to(map)
+
+
+chemin(path)
+
+# Ajout des marqueurs sur la map pour le résultat Glouton
+for index, position in enumerate(path_glouton):
+    folium.Marker(
+        location=[position[0], position[1]],
+        tooltip=str(index),
+        icon=folium.Icon(color="blue", icon="cloud"),
+    ).add_to(map)
+
+# Ajout de la polyline pour connecter les points
+polyline_glouton = folium.PolyLine(
+    locations=path_glouton, color='blue'
+)
+polyline_glouton.add_to(map)
+
+map.save("index.html")
