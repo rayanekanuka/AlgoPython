@@ -33,22 +33,15 @@ positions = [
 
 print("Voici les points GPS : ", positions, "\n")
 
-# ALGO DES PLUS PROCHES VOISINS_________________________________________________________________________________________
-
 visited = [False] * len(positions)
 path = []
 
 
-#Fonction pour calculer les distances entre deux points V1
+# Fonction pour calculer les distances entre deux points V1
 def distance(i, j):
     gap = haversine(i, j)
-    gap = round(gap, 4)
+    gap = round(gap, 5)
     return gap
-
-# def distance(point1, point2):
-#     coords_1 = float(point1)
-#     coords_2 = float(point2)
-#     return geopy.distance.geodesic(coords_1, coords_2).km
 
 
 # Fonction pour trier les positions par distance (matrice de distance)
@@ -56,18 +49,27 @@ matrix = [[distance(positions[i], positions[j]) for j in range(len(positions))] 
 print("Matrice de distance :", matrix, "\n")
 
 
-def totaldistance(path):
+# Fonction qui calcule la distance totale parcourue
+# def total_distance(path):
+#     total = 0
+#     for i in range(0, len(path) - 1):
+#         loc1 = (positions[i][0], positions[i][1])
+#         loc2 = (positions[i+1][0], positions[i+1][1])
+#         print(path[i], path[i + 1])
+#         total += distance(path[i], path[i + 1])
+#         total = round(total, 4)
+#     return total
+
+def total_distance(arr):
     total = 0
-    for i in range(0, len(path) - 1):
-        print(path[i], path[i+1])
-        total += distance(path[i], path[i + 1])
-        total = round(total, 4)
+    for i in range(len(arr)-1):
+        lat1, lon1 = arr[i]
+        lat2, lon2 = arr[i + 1]
+        total += haversine((lat1, lon1), (lat2, lon2))
     return total
 
 
-total = totaldistance(path)
-print("La distance est égale à : ", total, "Km \n")
-
+# ALGO DES PLUS PROCHES VOISINS_________________________________________________________________________________________
 
 # Fonction du chemin le plus court non visité
 def shortest_unvisited(current_town):
@@ -77,7 +79,7 @@ def shortest_unvisited(current_town):
 
     for i in range(len(matrix)):
         if not visited[i]:
-            if matrix[current_town][i] < smallest:
+            if matrix[current_town][i] < smallest and matrix[current_town][i] != 0:
                 smallest = matrix[current_town][i]
                 i_smallest = i
 
@@ -86,16 +88,19 @@ def shortest_unvisited(current_town):
 
 shortest_unvisited(0)
 
-# Index du chemin le plus court pour chaque ville
-current_index = 0
-path.append(current_index)
-for i in range(len(matrix)):
-    index_town = shortest_unvisited(current_index)
-    # print("Ceci est l'index du chemin le plus court ", index_town)
-    path.append(index_town)
-    current_index = index_town
 
-print("Résultat du plus proche voisin :", path, "\n")
+# Index du chemin le plus court pour chaque ville
+def nearest_neighbour():
+    current_index = 0
+    path.append(positions[current_index])
+    for i in range(len(matrix)):
+        index_town = shortest_unvisited(current_index)
+        path.append(positions[index_town])
+        current_index = index_town
+    return path
+
+nearest_neighbour()
+print("Résultat du plus proche voisin :", path, "\nLa distance est égale à :", total_distance(path), "Km \n")
 
 
 # ALGO 2-OPT____________________________________________________________________________________________________________
@@ -106,20 +111,7 @@ def swap(list):
     return temp
 
 
-# # Fonction qui récupère un csv et le transforme en objet python
-# def loadFile():
-#     positions.clear()
-#     with open('DataGPS/70villes.csv') as file:
-#         csvreader = csv.reader(file)
-#         next(csvreader)  # skip header line
-#         for row in csvreader:
-#             lat = float(row[0])
-#             lon = float(row[1])
-#             positions.append([lat, lon])
-#     return positions
-
-
-# AFFICHAGE
+# AFFICHAGE_____________________________________________________________________________________________________________
 
 m = folium.Map([45.166672, 5.71667], tiles="cartodb positron", zoom_start=14)
 
@@ -139,21 +131,21 @@ for index, position in enumerate(positions):
     ).add_to(m)
 
 
-# Ajout de la polyline pour connecter les points via des paramètres directement dedans
-def chemin(currentpath):
-    polylinepath = []
-    for i in currentpath:
-        coordinate = positions[i]
-        latitude = coordinate[0]
-        longitude = coordinate[1]
-        polylineCoordinate = (latitude, longitude)
-        polylinepath.append(polylineCoordinate)
-
-    polyline = folium.PolyLine(
-        locations=polylinepath, color='grey')
-    polyline.add_to(m)
-
-
-chemin(path)
+# Ajout de la polyline pour connecter les points
+# def chemin(currentpath):
+#     polylinepath = []
+#     for i in currentpath:
+#         coordinate = positions[i]
+#         latitude = coordinate[0]
+#         longitude = coordinate[1]
+#         polylineCoordinate = (latitude, longitude)
+#         polylinepath.append(polylineCoordinate)
+#
+#     polyline = folium.PolyLine(
+#         locations=polylinepath, color='grey')
+#     polyline.add_to(m)
+#
+#
+# chemin(path)
 
 m.save("index.html")
