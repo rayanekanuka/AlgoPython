@@ -100,7 +100,7 @@ def algo_glouton(start_point, path):
         new_point = path.pop()
         temp = result[:]  # équivalent à result.copy()
         result.append(new_point)
-        for j in range(1, len(result)):
+        for j in range(0, len(result)):
             temp.insert(j, new_point)
             if total_distance(temp) < total_distance(result):
                 result = temp[:]
