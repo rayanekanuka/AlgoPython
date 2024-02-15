@@ -48,7 +48,7 @@ class Zoo:
         self.animal_list.append(animal)
 
     def __add__(self, other):
-        new_animal_list = self.animal_list + other.animal_list
+        new_animal_list = self.animal_list + other.animal_list # à boucler dessus pour avoir 1 + 2 + 3 pour optimiser
         return Zoo(new_animal_list)
 
     def display_animal_list(self):
