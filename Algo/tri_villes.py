@@ -146,7 +146,7 @@ def shellsort(listVille):
     e = 0
     while e < length:
         e = (3 * e + 1)
-        espacements.insert(0,e)
+        espacements.insert(0, e)
 
     for e in espacements:
         for i in range(e, length):
