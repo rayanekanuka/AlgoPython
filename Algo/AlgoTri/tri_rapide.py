@@ -24,4 +24,5 @@ def partition(list, first, last):
     swap(list, last, j)
     return j
 
+
 print("\n résulat : ", tri_quick(list, 0, len(list) - 1))
