@@ -1,7 +1,8 @@
 list = [3, 9, 7, 1, 6, 2, 8, 4]
 
-def tri_merge(list, aff=False):
-    if aff:
+
+def tri_merge(list, val=False):
+    if val:
         print("tri_merge", list)
     if len(list) > 1:
         half_list = len(list) // 2
@@ -27,5 +28,6 @@ def tri_merge(list, aff=False):
             j += 1
             k += 1
     return list
+
 
 print(tri_merge(list))
