@@ -198,6 +198,7 @@ def quicksort(listVille, first, last):
         quicksort(listVille, pivot + 1, last)
     return listVille
 
+
 def partition(listVille, first, last):
     pivot = listVille[last]
     j = first
