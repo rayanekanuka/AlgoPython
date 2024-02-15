@@ -68,6 +68,7 @@ def totaldistance(path):
 total = totaldistance(path)
 print("La distance est égale à : ", total, "Km \n")
 
+
 # Fonction du chemin le plus court non visité
 def shortest_unvisited(current_town):
     visited[current_town] = True
