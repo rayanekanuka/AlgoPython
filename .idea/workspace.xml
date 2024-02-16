@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91c0907c-a69d-4232-afe5-970028d0bcf8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algo/tri_villes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algo/tri_villes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataGPS/algoGPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataGPS/algoGPS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataGPS/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataGPS/index.html" afterDir="false" />
     </list>
@@ -35,36 +34,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.index.html.executor": "Run",
-    "Python.AlgoTri.executor": "Run",
-    "Python.algoGPS.executor": "Run",
-    "Python.recursivity.executor": "Run",
-    "Python.thread.executor": "Debug",
-    "Python.tri_bulle.executor": "Run",
-    "Python.tri_fusion.executor": "Run",
-    "Python.tri_insertion.executor": "Run",
-    "Python.tri_par_tas.executor": "Run",
-    "Python.tri_rapide.executor": "Run",
-    "Python.tri_selection.executor": "Run",
-    "Python.tri_shell.executor": "Run",
-    "Python.tri_villes.executor": "Run",
-    "Python.zoo.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/rayane.kanuka/PycharmProjects/python_koans",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AlgoTri.executor&quot;: &quot;Run&quot;,
+    &quot;Python.algoGPS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.recursivity.executor&quot;: &quot;Run&quot;,
+    &quot;Python.thread.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.tri_bulle.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_fusion.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_insertion.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_par_tas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_rapide.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_selection.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_shell.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_villes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.zoo.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rayane.kanuka/PycharmProjects/python_koans&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rayane.kanuka\PycharmProjects\AlgoPython\Algo\AlgoTri" />
@@ -91,7 +90,8 @@
       <workItem from="1707839433909" duration="175000" />
       <workItem from="1707898121689" duration="15435000" />
       <workItem from="1707919368476" duration="6220000" />
-      <workItem from="1707984478991" duration="16597000" />
+      <workItem from="1707984478991" duration="16863000" />
+      <workItem from="1708070924201" duration="1737000" />
     </task>
     <servers />
   </component>
@@ -132,7 +132,7 @@
     <SUITE FILE_PATH="coverage/AlgoPython$tri_shell.coverage" NAME="tri_shell Coverage Results" MODIFIED="1707742192755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_selection.coverage" NAME="tri_selection Coverage Results" MODIFIED="1707742334343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$AlgoTri.coverage" NAME="AlgoTri Coverage Results" MODIFIED="1707725092260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo" />
-    <SUITE FILE_PATH="coverage/AlgoPython$algoGPS.coverage" NAME="algoGPS Coverage Results" MODIFIED="1708003458545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataGPS" />
+    <SUITE FILE_PATH="coverage/AlgoPython$algoGPS.coverage" NAME="algoGPS Coverage Results" MODIFIED="1708075244030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataGPS" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_fusion.coverage" NAME="tri_fusion Coverage Results" MODIFIED="1707999707687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_rapide.coverage" NAME="tri_rapide Coverage Results" MODIFIED="1708001249005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo/AlgoTri" />
     <SUITE FILE_PATH="coverage/AlgoPython$tri_insertion.coverage" NAME="tri_insertion Coverage Results" MODIFIED="1707734197939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algo" />

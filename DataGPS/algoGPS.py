@@ -110,8 +110,36 @@ def algo_glouton(start_point, path):
 
 path_glouton = algo_glouton(0, path.copy())
 print("Résultat Glouton :", path_glouton)
-total2 = total_distance(path_glouton)
-print("La distance est égale à :", total2, "Km")
+total_glouton = total_distance(path_glouton)
+print("La distance est égale à :", total_glouton, "Km")
+
+
+def shortest_glouton(path):
+    shortest_way = 10000
+    best_path = []
+    for i in range(0, len(path) - 1):
+        p = algo_glouton(i, path.copy())
+        if total_distance(p) < shortest_way:
+            shortest_way = total_distance(p)
+            best_path.insert(0, p)
+    return best_path[0]
+
+
+path_glouton = shortest_glouton(path.copy())
+print("\nRésultat du Glouton optimisé :", path_glouton)
+total_shortest_glouton = total_distance(path_glouton)
+print("La distance est égale à :", total_shortest_glouton, "Km")
+
+
+
+# ALGO Génétique________________________________________________________________________________________________________
+
+# def individu():
+#     groupe = []
+#     for i in range(0, len(positions)):
+#         groupe.append(algo_glouton(i, path.copy()))
+
+
 
 
 
