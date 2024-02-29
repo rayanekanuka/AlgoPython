@@ -4,10 +4,10 @@
 L’objectif de ce module d’algorithmique avancé est de vous permettre de développer sa pensée algorithmique.
 
 ## Compétences
-+ Conception d’un algorithme de tri, lecture de pseudo-code, anticipation et vérification du comportement d’un algorithme.
-+ Sensibilisation aux algorithmes récursifs et à la stratégie divide-and-conquer.
-+ Structuration d’un problème algorithmique et choix d’une structure de données adaptée pour résoudre un problème donné.
-+ Sensibilisation aux notions de complexité (algorithmique et d’espace).
+1. Conception d’un algorithme de tri, lecture de pseudo-code, anticipation et vérification du comportement d’un algorithme.
+2. Sensibilisation aux algorithmes récursifs et à la stratégie divide-and-conquer.
+3. Structuration d’un problème algorithmique et choix d’une structure de données adaptée pour résoudre un problème donné.
+4. Sensibilisation aux notions de complexité (algorithmique et d’espace).
 
 ### Semaine 1
 - Mettre en place un environnement de développement Python
